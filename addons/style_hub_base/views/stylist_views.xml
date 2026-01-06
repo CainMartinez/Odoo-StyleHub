@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Stylist List View -->
+    <record id="view_stylist_tree" model="ir.ui.view">
+        <field name="name">stylehub.stylist.tree</field>
+        <field name="model">stylehub.stylist</field>
+        <field name="arch" type="xml">
+            <list string="Stylists">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="appointment_count"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Stylist Form View -->
+    <record id="view_stylist_form" model="ir.ui.view">
+        <field name="name">stylehub.stylist.form</field>
+        <field name="model">stylehub.stylist</field>
+        <field name="arch" type="xml">
+            <form string="Stylist">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(action_appointment)d" type="action"
+                                class="oe_stat_button" icon="fa-calendar"
+                                context="{'default_stylist_id': id}">
+                            <field name="appointment_count" widget="statinfo" string="Appointments"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Inactive" bg_color="text-bg-danger" 
+                            invisible="active"/>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Stylist Name"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="email" placeholder="email@example.com"/>
+                            <field name="phone" placeholder="+1 234 567 890"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Stylist Kanban View -->
+    <record id="view_stylist_kanban" model="ir.ui.view">
+        <field name="name">stylehub.stylist.kanban</field>
+        <field name="model">stylehub.stylist</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="appointment_count"/>
+                <field name="active"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_content">
+                            <div class="o_kanban_record_top">
+                                <strong><field name="name"/></strong>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <div t-if="record.email.raw_value">
+                                    <i class="fa fa-envelope"/> <field name="email"/>
+                                </div>
+                                <div t-if="record.phone.raw_value">
+                                    <i class="fa fa-phone"/> <field name="phone"/>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <span class="badge text-bg-info">
+                                        <i class="fa fa-calendar"/> <field name="appointment_count"/> appointments
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Stylist Action -->
+    <record id="action_stylist" model="ir.actions.act_window">
+        <field name="name">Stylists</field>
+        <field name="res_model">stylehub.stylist</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your first stylist!
+            </p>
+            <p>
+                Register all your salon employees here to assign them to appointments.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_stylehub_root"
+              name="StyleHub"
+              sequence="10"
+              web_icon="style_hub_base,static/description/icon.png"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_stylehub_config"
+              name="Configuration"
+              parent="menu_stylehub_root"
+              sequence="100"/>
+
+    <!-- Services Menu -->
+    <menuitem id="menu_stylehub_service"
+              name="Services"
+              parent="menu_stylehub_config"
+              action="action_service"
+              sequence="10"/>
+
+    <!-- Stylists Menu -->
+    <menuitem id="menu_stylehub_stylist"
+              name="Stylists"
+              parent="menu_stylehub_config"
+              action="action_stylist"
+              sequence="20"/>
+
+    <!-- Appointments Menu -->
+    <menuitem id="menu_stylehub_appointment"
+              name="Appointments"
+              parent="menu_stylehub_root"
+              action="action_appointment"
+              sequence="10"/>
+</odoo>
