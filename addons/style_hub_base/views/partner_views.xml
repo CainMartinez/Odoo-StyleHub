@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Extend Partner Form to show VIP Status -->
+    <record id="view_partner_form_inherit_stylehub" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.stylehub</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Add VIP ribbon -->
+            <xpath expr="//sheet" position="before">
+                <widget name="web_ribbon" title="VIP Client" bg_color="text-bg-warning" 
+                        invisible="not frequent_client"/>
+            </xpath>
+            
+            <!-- Add appointment statistics button -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="%(action_appointment)d" type="action"
+                        class="oe_stat_button" icon="fa-calendar"
+                        context="{'default_customer_id': id, 'search_default_customer_id': id}">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="appointment_count"/>
+                        </span>
+                        <span class="o_stat_text">Appointments</span>
+                    </div>
+                </button>
+                <button name="%(action_appointment)d" type="action"
+                        class="oe_stat_button" icon="fa-check-circle"
+                        context="{'default_customer_id': id, 'search_default_customer_id': id, 'search_default_filter_done': 1}"
+                        invisible="not frequent_client">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value text-warning">
+                            <field name="completed_appointment_count"/> ⭐
+                        </span>
+                        <span class="o_stat_text">Completed</span>
+                    </div>
+                </button>
+            </xpath>
+            
+            <!-- Add VIP badge in title area for visibility -->
+            <xpath expr="//field[@name='name']" position="after">
+                <div class="badge text-bg-warning fs-5 ms-2" invisible="not frequent_client">
+                    ⭐ VIP FREQUENT CLIENT ⭐
+                </div>
+                <field name="frequent_client" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

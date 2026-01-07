@@ -25,7 +25,7 @@
                     <div class="oe_button_box" name="button_box">
                         <button name="%(action_appointment)d" type="action"
                                 class="oe_stat_button" icon="fa-calendar"
-                                context="{'default_stylist_id': id}">
+                                context="{'default_stylist_id': id, 'search_default_stylist_id': id}">
                             <field name="appointment_count" widget="statinfo" string="Appointments"/>
                         </button>
                     </div>
