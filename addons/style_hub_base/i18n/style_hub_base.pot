@@ -1,0 +1,759 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* style_hub_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250819\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-06 19:44+0000\n"
+"PO-Revision-Date: 2026-01-06 19:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_form
+msgid "+1 234 567 890"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_partner_form_inherit_stylehub
+msgid "<span class=\"o_stat_text\">Appointments</span>"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_partner_form_inherit_stylehub
+msgid "<span class=\"o_stat_text\">Completed</span>"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__active
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__active
+msgid "Active"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.actions.act_window,help:style_hub_base.action_stylist
+msgid "Add your first stylist!"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_service__description
+msgid "Additional details about the service"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_service_form
+msgid "Additional details about this service..."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__notes
+msgid "Additional notes or special requests"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__appointment_id
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Appointment Details"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model,name:style_hub_base.model_stylehub_appointment_line
+msgid "Appointment Service Line"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.actions.act_window,name:style_hub_base.action_appointment
+#: model:ir.ui.menu,name:style_hub_base.menu_stylehub_appointment
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_tree
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_form
+msgid "Appointments"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_calendar
+msgid "Appointments Calendar"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__end_datetime
+msgid "Automatically calculated based on service durations"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_res_partner__frequent_client
+#: model:ir.model.fields,help:style_hub_base.field_res_users__frequent_client
+msgid ""
+"Automatically marked as VIP if customer has more than 5 completed "
+"appointments"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__base_price
+msgid "Base Price"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Cancel"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields.selection,name:style_hub_base.selection__stylehub_appointment__state__cancelled
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Cancelled"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.actions.act_window,help:style_hub_base.action_appointment
+msgid ""
+"Click the CREATE button to book a new appointment. \n"
+"                The system will automatically calculate the end time and prevent overlapping bookings."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__customer_id
+msgid "Client for this appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__color
+msgid "Color"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__color
+msgid "Color index for kanban view"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_res_partner__completed_appointment_count
+#: model:ir.model.fields,field_description:style_hub_base.field_res_users__completed_appointment_count
+msgid "Completed Appointments"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.ui.menu,name:style_hub_base.menu_stylehub_config
+msgid "Configuration"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Confirm Appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields.selection,name:style_hub_base.selection__stylehub_appointment__state__confirmed
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Confirmed"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model,name:style_hub_base.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_stylist__email
+msgid "Contact email for the stylist"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_stylist__phone
+msgid "Contact phone number"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.actions.act_window,help:style_hub_base.action_service
+msgid "Create your first service!"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__create_uid
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__create_uid
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__create_uid
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__create_date
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__create_date
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__create_date
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__currency_id
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__currency_id
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__currency_id
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment_line__currency_id
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_service__currency_id
+msgid "Currency for pricing"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__state
+msgid "Current status of the appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__customer_id
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Customer"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.actions.act_window,help:style_hub_base.action_service
+msgid ""
+"Define all the services offered at your salon with their duration and "
+"pricing."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__description
+msgid "Description"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__display_name
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__display_name
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__display_name
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields.selection,name:style_hub_base.selection__stylehub_appointment__state__done
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Done"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields.selection,name:style_hub_base.selection__stylehub_appointment__state__draft
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Draft"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__duration
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__duration
+msgid "Duration (hours)"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment_line__duration
+msgid "Duration of the service in hours"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_service__duration
+msgid ""
+"Duration of the service in hours (e.g., 0.5 for 30 minutes, 2.5 for 2.5 "
+"hours)"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__email
+msgid "Email"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__end_datetime
+msgid "End Date & Time"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_kanban
+msgid "Ends:"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_res_partner__frequent_client
+#: model:ir.model.fields,field_description:style_hub_base.field_res_users__frequent_client
+msgid "Frequent Client"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Group By"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model,name:style_hub_base.model_stylehub_appointment
+msgid "Hair Salon Appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model,name:style_hub_base.model_stylehub_service
+msgid "Hair Salon Service"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model,name:style_hub_base.model_stylehub_stylist
+msgid "Hair Salon Stylist"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__id
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__id
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__id
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__id
+msgid "ID"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__message_has_error
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_form
+msgid "Inactive"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__write_uid
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__write_uid
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__write_uid
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__write_date
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__write_date
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__write_date
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Mark as Done"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_service__name
+msgid ""
+"Name of the hair salon service (e.g., Men's Haircut, Full Dye, Balayage "
+"Highlights)"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_stylist__name
+msgid "Name of the stylist/employee"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__notes
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Notes"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_res_partner__completed_appointment_count
+#: model:ir.model.fields,help:style_hub_base.field_res_users__completed_appointment_count
+msgid "Number of completed appointments"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment_line__sequence
+msgid "Order of services in the appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__phone
+msgid "Phone"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__price
+msgid "Price"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment_line__price
+msgid "Price for this service. Defaults to base price but can be adjusted."
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.actions.act_window,help:style_hub_base.action_stylist
+msgid "Register all your salon employees here to assign them to appointments."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment_line__appointment_id
+msgid "Related appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.actions.act_window,help:style_hub_base.action_appointment
+msgid "Schedule your first appointment!"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Search Appointments"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment_line__service_id
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_service_form
+msgid "Service"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_service__name
+msgid "Service Name"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment_line__service_id
+msgid "Service to be performed"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.actions.act_window,name:style_hub_base.action_service
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__line_ids
+#: model:ir.ui.menu,name:style_hub_base.menu_stylehub_service
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_service_tree
+msgid "Services"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__line_ids
+msgid "Services included in this appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Special requests, customer preferences, etc..."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_service__base_price
+msgid ""
+"Standard price for this service. Can be modified per appointment if needed."
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Start Date"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__start_datetime
+msgid "Start Date & Time"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__state
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Status"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.ui.menu,name:style_hub_base.menu_stylehub_root
+msgid "StyleHub"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__stylist_id
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_form
+msgid "Stylist"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__name
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_form
+msgid "Stylist Name"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__stylist_id
+msgid "Stylist assigned to this appointment"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.actions.act_window,name:style_hub_base.action_stylist
+#: model:ir.ui.menu,name:style_hub_base.menu_stylehub_stylist
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_tree
+msgid "Stylists"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__total_duration
+msgid "Sum of all service durations"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "This Week"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_form
+msgid "Timing"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_appointment_search
+msgid "Today"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_res_partner__appointment_count
+#: model:ir.model.fields,field_description:style_hub_base.field_res_users__appointment_count
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_stylist__appointment_count
+msgid "Total Appointments"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__total_duration
+msgid "Total Duration (hours)"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__total_price
+msgid "Total Price"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__total_price
+msgid "Total amount to be paid"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_stylist__appointment_count
+msgid "Total number of appointments assigned to this stylist"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_res_partner__appointment_count
+#: model:ir.model.fields,help:style_hub_base.field_res_users__appointment_count
+msgid "Total number of appointments for this customer"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_stylist__active
+msgid "Uncheck if the stylist is no longer working at the salon"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_service__active
+msgid "Uncheck to hide this service from the catalog"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_partner_form_inherit_stylehub
+msgid "VIP Client"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,field_description:style_hub_base.field_stylehub_appointment__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: style_hub_base
+#: model:ir.model.fields,help:style_hub_base.field_stylehub_appointment__start_datetime
+msgid "When the appointment begins"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_kanban
+msgid "appointments"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_service_form
+msgid "e.g., Men's Haircut"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_stylist_form
+msgid "email@example.com"
+msgstr ""
+
+#. module: style_hub_base
+#: model_terms:ir.ui.view,arch_db:style_hub_base.view_partner_form_inherit_stylehub
+msgid "⭐ VIP FREQUENT CLIENT ⭐"
+msgstr ""

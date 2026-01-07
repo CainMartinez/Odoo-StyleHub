@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Servicios Demo -->
+        <record id="service_mens_haircut" model="stylehub.service">
+            <field name="name">Corte Caballero</field>
+            <field name="duration">0.5</field>
+            <field name="base_price">25.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Corte de pelo clásico para hombre, incluye lavado y peinado</field>
+        </record>
+
+        <record id="service_womens_haircut" model="stylehub.service">
+            <field name="name">Corte Señora</field>
+            <field name="duration">1.0</field>
+            <field name="base_price">45.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Corte de pelo para mujer con consultoría, lavado, corte y secado</field>
+        </record>
+
+        <record id="service_full_dye" model="stylehub.service">
+            <field name="name">Tinte Completo</field>
+            <field name="duration">2.0</field>
+            <field name="base_price">85.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Servicio completo de coloración del cabello de raíz a puntas</field>
+        </record>
+
+        <record id="service_balayage" model="stylehub.service">
+            <field name="name">Mechas Balayage</field>
+            <field name="duration">2.5</field>
+            <field name="base_price">120.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Mechas pintadas a mano para un efecto natural con reflejos</field>
+        </record>
+
+        <record id="service_root_touch_up" model="stylehub.service">
+            <field name="name">Retoque de Raíces</field>
+            <field name="duration">1.0</field>
+            <field name="base_price">50.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Retoque de color para raíces visibles</field>
+        </record>
+
+        <record id="service_keratin" model="stylehub.service">
+            <field name="name">Tratamiento de Keratina</field>
+            <field name="duration">3.0</field>
+            <field name="base_price">150.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Tratamiento alisador de acondicionamiento profundo con keratina</field>
+        </record>
+
+        <record id="service_blowout" model="stylehub.service">
+            <field name="name">Lavado &amp; Peinado</field>
+            <field name="duration">0.5</field>
+            <field name="base_price">35.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Lavado profesional, secado y peinado</field>
+        </record>
+
+        <record id="service_updo" model="stylehub.service">
+            <field name="name">Recogido / Peinado para Eventos</field>
+            <field name="duration">1.5</field>
+            <field name="base_price">75.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Recogido elegante para bodas, fiestas o eventos especiales</field>
+        </record>
+
+        <record id="service_deep_conditioning" model="stylehub.service">
+            <field name="name">Tratamiento Hidratante Profundo</field>
+            <field name="duration">0.5</field>
+            <field name="base_price">30.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Tratamiento hidratante intensivo para cabello dañado</field>
+        </record>
+
+        <record id="service_beard_trim" model="stylehub.service">
+            <field name="name">Arreglo de Barba</field>
+            <field name="duration">0.25</field>
+            <field name="base_price">15.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Recorte y perfilado profesional de barba</field>
+        </record>
+
+        <record id="service_kids_cut" model="stylehub.service">
+            <field name="name">Corte Infantil (Menores de 12)</field>
+            <field name="duration">0.5</field>
+            <field name="base_price">20.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Corte de pelo para niños menores de 12 años</field>
+        </record>
+
+        <record id="service_extensions" model="stylehub.service">
+            <field name="name">Aplicación de Extensiones</field>
+            <field name="duration">3.5</field>
+            <field name="base_price">200.00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="description">Instalación profesional de extensiones de pelo (extensiones no incluidas)</field>
+        </record>
+
+        <!-- Estilistas Demo -->
+        <record id="stylist_marcos" model="stylehub.stylist">
+            <field name="name">Marcos García</field>
+            <field name="email">marcos@stylehub.com</field>
+            <field name="phone">+34 600 123 456</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="stylist_laura" model="stylehub.stylist">
+            <field name="name">Laura Martínez</field>
+            <field name="email">laura@stylehub.com</field>
+            <field name="phone">+34 600 234 567</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="stylist_sofia" model="stylehub.stylist">
+            <field name="name">Sofía Rodríguez</field>
+            <field name="email">sofia@stylehub.com</field>
+            <field name="phone">+34 600 345 678</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="stylist_david" model="stylehub.stylist">
+            <field name="name">David López</field>
+            <field name="email">david@stylehub.com</field>
+            <field name="phone">+34 600 456 789</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="stylist_ana" model="stylehub.stylist">
+            <field name="name">Ana Fernández</field>
+            <field name="email">ana@stylehub.com</field>
+            <field name="phone">+34 600 567 890</field>
+            <field name="active">False</field>
+        </record>
+
+    </data>
+</odoo>
