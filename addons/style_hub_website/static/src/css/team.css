@@ -1,0 +1,224 @@
+/* StyleHub - Team Page Styles */
+
+.team-page {
+    background: linear-gradient(135deg, #e0f7f6 0%, #b2ebf2 50%, #80deea 100%);
+    padding: 4rem 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(62, 191, 189, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(45, 155, 153, 0.15) 0%, transparent 50%);
+    animation: gradientMove 20s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.team-hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.team-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #2c3e50 0%, #3EBFBD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.team-hero .subtitle {
+    font-size: 1.3rem;
+    color: #546e7a;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.team-hero .tagline {
+    font-size: 1.1rem;
+    color: #3EBFBD;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.ceo-card {
+    background: white;
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.ceo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #3EBFBD 0%, #2D9B99 100%);
+}
+
+.ceo-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3EBFBD 0%, #2D9B99 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    box-shadow: 0 10px 30px rgba(62,191,189,0.3);
+    border: 5px solid white;
+}
+
+.ceo-photo i {
+    font-size: 5rem;
+    color: white;
+}
+
+.ceo-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.ceo-title {
+    font-size: 1.3rem;
+    color: #3EBFBD;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.ceo-bio {
+    font-size: 1.1rem;
+    color: #546e7a;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stylists-section {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3EBFBD 0%, #2D9B99 100%);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.stylist-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.stylist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(62,191,189,0.3);
+}
+
+.stylist-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3EBFBD 0%, #2D9B99 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 5px 20px rgba(62,191,189,0.3);
+}
+
+.stylist-photo i {
+    font-size: 3rem;
+    color: white;
+}
+
+.stylist-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.stylist-specialization {
+    font-size: 1rem;
+    color: #3EBFBD;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.stylist-experience {
+    font-size: 0.9rem;
+    color: #546e7a;
+    margin-bottom: 1rem;
+}
+
+.stylist-available {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stylist-unavailable {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #ffebee;
+    color: #c62828;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}

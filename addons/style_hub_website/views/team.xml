@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Team Page Template -->
+    <template id="our_team_template" name="Our Team">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Nuestro Equipo</t>
+            
+            <div class="team-page">
+                <div class="container">
+                    <!-- Hero Section -->
+                    <div class="team-hero">
+                        <h1>Nuestro Equipo</h1>
+                        <p class="subtitle">Conoce a los profesionales que harán realidad tu transformación</p>
+                        <p class="tagline">👥 Experiencia y Pasión en Cada Corte 👥</p>
+                    </div>
+                    
+                    <!-- CEO Section -->
+                    <div class="ceo-card">
+                        <div class="ceo-photo">
+                            <i class="fa fa-user-circle"/>
+                        </div>
+                        <h2 class="ceo-name">
+                            <t t-esc="ceo.name"/>
+                        </h2>
+                        <p class="ceo-title">CEO &amp; Fundador</p>
+                        <p class="ceo-bio">
+                            Líder visionario de StyleHub, con más de 15 años de experiencia en el sector de la belleza y el estilo. 
+                            Comprometido con ofrecer servicios de la más alta calidad y crear una experiencia única para cada cliente. 
+                            Su pasión por la innovación y la excelencia ha convertido a StyleHub en un referente de la industria.
+                        </p>
+                    </div>
+                    
+                    <!-- Stylists Section -->
+                    <div class="stylists-section">
+                        <h2 class="section-title">Nuestros Estilistas</h2>
+                        <div class="row">
+                            <t t-foreach="stylists" t-as="stylist">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="stylist-card">
+                                        <div class="stylist-photo">
+                                            <i class="fa fa-user"/>
+                                        </div>
+                                        <h3 class="stylist-name">
+                                            <t t-esc="stylist.name"/>
+                                        </h3>
+                                        <p class="stylist-specialization">
+                                            <i class="fa fa-scissors"/> Estilista Profesional
+                                        </p>
+                                        <t t-if="stylist.email">
+                                            <p class="stylist-experience">
+                                                <i class="fa fa-envelope"/> 
+                                                <t t-esc="stylist.email"/>
+                                            </p>
+                                        </t>
+                                        <t t-if="stylist.phone">
+                                            <p class="stylist-experience">
+                                                <i class="fa fa-phone"/> 
+                                                <t t-esc="stylist.phone"/>
+                                            </p>
+                                        </t>
+                                        <t t-if="stylist.active">
+                                            <span class="stylist-available">
+                                                <i class="fa fa-check-circle"/> Disponible
+                                            </span>
+                                        </t>
+                                        <t t-else="">
+                                            <span class="stylist-unavailable">
+                                                <i class="fa fa-times-circle"/> No disponible
+                                            </span>
+                                        </t>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    
+    <!-- Team Menu -->
+    <record id="menu_our_team" model="website.menu">
+        <field name="name">Nuestro Equipo</field>
+        <field name="url">/nuestro-equipo</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">45</field>
+    </record>
+
+</odoo>

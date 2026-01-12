@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Portal: My Appointments List -->
+    <template id="portal_my_appointments" name="My Appointments">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Mis Citas</t>
+            </t>
+            
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-12">
+                        <t t-if="not appointments">
+                            <div class="alert alert-info">
+                                <h4>No tienes citas reservadas</h4>
+                                <p>
+                                    <a href="/appointment/book" class="btn btn-primary">
+                                        <i class="fa fa-calendar-plus"/> Reservar una cita
+                                    </a>
+                                </p>
+                            </div>
+                        </t>
+                        
+                        <t t-else="">
+                            <div class="mb-3">
+                                <a href="/appointment/book" class="btn btn-primary">
+                                    <i class="fa fa-calendar-plus"/> Nueva Cita
+                                </a>
+                            </div>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha y Hora</th>
+                                            <th>Estilista</th>
+                                            <th>Servicios</th>
+                                            <th>Total</th>
+                                            <th>Estado</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="appointments" t-as="appointment">
+                                            <tr>
+                                                <td>
+                                                    <t t-esc="appointment.start_datetime.strftime('%d/%m/%Y %H:%M')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="appointment.stylist_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="', '.join(appointment.line_ids.mapped('service_id.name'))"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="appointment.total_price"/>
+                                                    <t t-esc="appointment.currency_id.symbol"/>
+                                                </td>
+                                                <td>
+                                                    <span t-att-class="'badge badge-' + ('success' if appointment.state == 'confirmed' else 'secondary')">
+                                                        <t t-if="appointment.state == 'draft'">Borrador</t>
+                                                        <t t-elif="appointment.state == 'confirmed'">Confirmada</t>
+                                                        <t t-elif="appointment.state == 'done'">Completada</t>
+                                                        <t t-elif="appointment.state == 'cancelled'">Cancelada</t>
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <a t-attf-href="/my/appointments/{{appointment.id}}" class="btn btn-sm btn-secondary">
+                                                        <i class="fa fa-eye"/> Ver
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    
+    <!-- Portal: Appointment Detail -->
+    <template id="portal_appointment_detail" name="Appointment Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="mb-0">Detalles de la Cita</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <strong>Fecha y Hora:</strong><br/>
+                                        <t t-esc="appointment.start_datetime.strftime('%d/%m/%Y a las %H:%M')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Duración Total:</strong><br/>
+                                        <t t-esc="appointment.total_duration"/> horas
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <strong>Estilista:</strong><br/>
+                                        <t t-esc="appointment.stylist_id.name"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Estado:</strong><br/>
+                                        <span t-att-class="'badge badge-' + ('success' if appointment.state == 'confirmed' else 'secondary')">
+                                            <t t-if="appointment.state == 'draft'">Borrador</t>
+                                            <t t-elif="appointment.state == 'confirmed'">Confirmada</t>
+                                            <t t-elif="appointment.state == 'done'">Completada</t>
+                                            <t t-elif="appointment.state == 'cancelled'">Cancelada</t>
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <hr/>
+                                
+                                <h4 class="mb-3">Servicios</h4>
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Servicio</th>
+                                            <th>Duración</th>
+                                            <th class="text-right">Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="appointment.line_ids" t-as="line">
+                                            <tr>
+                                                <td><t t-esc="line.service_id.name"/></td>
+                                                <td><t t-esc="line.duration"/> h</td>
+                                                <td class="text-right">
+                                                    <t t-esc="line.price"/> 
+                                                    <t t-esc="appointment.currency_id.symbol"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="font-weight-bold">
+                                            <td colspan="2">Total</td>
+                                            <td class="text-right">
+                                                <t t-esc="appointment.total_price"/> 
+                                                <t t-esc="appointment.currency_id.symbol"/>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                
+                                <t t-if="appointment.notes">
+                                    <hr/>
+                                    <h4>Notas</h4>
+                                    <p><t t-esc="appointment.notes"/></p>
+                                </t>
+                                
+                                <hr/>
+                                
+                                <div class="text-center">
+                                    <a href="/my/appointments" class="btn btn-secondary">
+                                        <i class="fa fa-arrow-left"/> Volver a Mis Citas
+                                    </a>
+                                    
+                                    <t t-if="appointment.state in ['draft', 'confirmed']">
+                                        <a t-attf-href="/my/appointments/{{appointment.id}}/cancel" 
+                                           class="btn btn-danger"
+                                           onclick="return confirm('¿Estás seguro de que quieres cancelar esta cita?');">
+                                            <i class="fa fa-times"/> Cancelar Cita
+                                        </a>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

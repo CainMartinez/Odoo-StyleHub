@@ -1,0 +1,146 @@
+/* StyleHub - Services Page Styles */
+
+.services-page {
+    background: linear-gradient(135deg, #e0f7f6 0%, #b2ebf2 50%, #80deea 100%);
+    padding: 4rem 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(62, 191, 189, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(45, 155, 153, 0.15) 0%, transparent 50%);
+    animation: gradientMove 20s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.services-hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.services-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #2c3e50 0%, #3EBFBD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.services-hero .subtitle {
+    font-size: 1.3rem;
+    color: #546e7a;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.services-hero .tagline {
+    font-size: 1.1rem;
+    color: #3EBFBD;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.service-product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.service-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(62,191,189,0.3);
+}
+
+.service-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #3EBFBD 0%, #2D9B99 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.service-name {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-duration {
+    color: #546e7a;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-price {
+    color: #3EBFBD;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: auto;
+}
+
+.service-description {
+    color: #546e7a;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.btn-book-service {
+    background: linear-gradient(135deg, #3EBFBD 0%, #2D9B99 100%);
+    border: none;
+    color: white !important;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-book-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(62,191,189,0.4);
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.services-grid {
+    margin-top: 3rem;
+}

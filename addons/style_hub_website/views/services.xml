@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Services Page Template -->
+    <template id="our_services_template" name="Our Services">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Servicios</t>
+            
+            <div class="services-page">
+                <div class="container">
+                    <div class="services-hero">
+                        <h1>Nuestros Servicios</h1>
+                        <p class="subtitle">Descubre la excelencia en cada tratamiento de belleza y estilo</p>
+                        <p class="tagline">💎 Calidad Premium para tu Transformación 💎</p>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <div class="row">
+                            <t t-foreach="services" t-as="service">
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="service-product-card" t-att-data-service-id="service.id">
+                                        <div class="service-icon">
+                                            <i class="fa fa-scissors"/>
+                                        </div>
+                                        <h3 class="service-name">
+                                            <t t-esc="service.name"/>
+                                        </h3>
+                                        <div class="service-duration">
+                                            <i class="fa fa-clock-o" style="color: #3EBFBD;"/>
+                                            <t t-if="service.duration &lt; 1">
+                                                <t t-esc="int(service.duration * 60)"/> minutos
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="service.duration"/> horas
+                                            </t>
+                                        </div>
+                                        <p class="service-description">
+                                            <t t-esc="service.description or 'Servicio profesional de peluquería y estética'"/>
+                                        </p>
+                                        <div class="service-price">
+                                            <t t-esc="service.base_price"/> €
+                                        </div>
+                                        <a t-attf-href="/appointment/book?service_id={{service.id}}" class="btn-book-service mt-3">
+                                            <i class="fa fa-calendar-check-o"/> Reservar Ahora
+                                        </a>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a href="/appointment/book" class="btn btn-lg btn-book-service">
+                            <i class="fa fa-calendar-plus"/> Reserva Tu Cita Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    
+    <!-- Services Menu -->
+    <record id="menu_our_services" model="website.menu">
+        <field name="name">Servicios</field>
+        <field name="url">/nuestros-servicios</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">40</field>
+    </record>
+
+</odoo>

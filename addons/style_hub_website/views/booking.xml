@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Booking Wizard Template -->
+    <template id="appointment_booking_template" name="Book Appointment">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Reservar Cita</t>
+            <div class="booking-wizard">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="hero-section">
+                                <h1>Reserva tu Cita en StyleHub</h1>
+                                <p class="subtitle">Transforma tu look con nuestros expertos estilistas</p>
+                                <p class="tagline">✨ Porque tu belleza merece atención profesional ✨</p>
+                            </div>
+                            
+                            <!-- Step Indicator -->
+                            <div class="step-indicator mb-4">
+                                <div class="step-item active" id="step-indicator-1">
+                                    <div class="step-number">1</div>
+                                    <div class="step-label" style="color: #2c3e50; font-weight: 500;">Servicios</div>
+                                </div>
+                                <div class="step-item" id="step-indicator-2">
+                                    <div class="step-number">2</div>
+                                    <div class="step-label" style="color: #2c3e50; font-weight: 500;">Fecha</div>
+                                </div>
+                                <div class="step-item" id="step-indicator-3">
+                                    <div class="step-number">3</div>
+                                    <div class="step-label" style="color: #2c3e50; font-weight: 500;">Hora</div>
+                                </div>
+                                <div class="step-item" id="step-indicator-4">
+                                    <div class="step-number">4</div>
+                                    <div class="step-label" style="color: #2c3e50; font-weight: 500;">Confirmar</div>
+                                </div>
+                            </div>
+                            
+                            <div class="booking-step fade-in" id="booking-container">
+                                
+                                <!-- Step 1: Services -->
+                                <div class="step-content" id="step-1">
+                                    <h2 class="text-center mb-4" style="color: #333;">Selecciona tus Servicios</h2>
+                                    <div class="row" id="services-container">
+                                        <t t-foreach="services" t-as="service">
+                                            <div class="col-md-6 col-lg-4 mb-4">
+                                                <div class="service-card position-relative" t-att-data-service-id="service.id" t-att-data-duration="service.duration" t-att-data-price="service.base_price">
+                                                    <div class="checkmark">✓</div>
+                                                    <h4 class="mb-3" style="color: #3EBFBD;"><t t-esc="service.name"/></h4>
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <span style="color: #546e7a;">
+                                                            <i class="fa fa-clock-o" style="color: #3EBFBD;"/> 
+                                                            <t t-if="service.duration &lt; 1">
+                                                                <t t-esc="int(service.duration * 60)"/> min
+                                                            </t>
+                                                            <t t-else="">
+                                                                <t t-esc="service.duration"/> horas
+                                                            </t>
+                                                        </span>
+                                                        <span class="text-success font-weight-bold"><t t-esc="service.base_price"/> €</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                    <div class="summary-box">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <strong>Servicios seleccionados:</strong>
+                                                <span id="selected-services-count">0</span>
+                                            </div>
+                                            <div>
+                                                <strong>Total:</strong>
+                                                <span id="total-price" class="text-success">0.00 €</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-wizard btn-wizard-primary" id="btn-next-1" disabled="disabled">
+                                            Continuar a Fecha <i class="fa fa-arrow-right ml-2"/>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Step 2: Date Selection -->
+                                <div class="step-content d-none" id="step-2">
+                                    <h2 class="text-center mb-4" style="color: #333;">Elige una Fecha</h2>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                            <input type="date" class="form-control form-control-lg text-center" id="appointment_date" style="border-radius: 15px; border: 2px solid #3EBFBD; color: #333;"/>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <button type="button" class="btn btn-wizard btn-outline-secondary mr-3" id="btn-back-2">
+                                            <i class="fa fa-arrow-left mr-2"/> Volver
+                                        </button>
+                                        <button type="button" class="btn btn-wizard btn-wizard-primary" id="btn-next-2" disabled="disabled">
+                                            Continuar a Hora <i class="fa fa-arrow-right ml-2"/>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Step 3: Time Selection -->
+                                <div class="step-content d-none" id="step-3">
+                                    <h2 class="text-center mb-4" style="color: #333;">Selecciona la Hora</h2>
+                                    <div id="loading-slots" class="text-center d-none">
+                                        <div class="spinner-border" style="width: 3rem; height: 3rem; color: #3EBFBD;" role="status">
+                                            <span class="sr-only">Cargando...</span>
+                                        </div>
+                                        <p class="mt-3" style="color: #333;">Buscando horarios disponibles...</p>
+                                    </div>
+                                    <div id="time-slots-container" class="row"></div>
+                                    <div id="no-slots-message" class="alert alert-warning text-center d-none">
+                                        <i class="fa fa-exclamation-triangle fa-2x mb-3"/>
+                                        <p>No hay horarios disponibles para esta fecha. Por favor, selecciona otra fecha.</p>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <button type="button" class="btn btn-wizard btn-outline-secondary mr-3" id="btn-back-3">
+                                            <i class="fa fa-arrow-left mr-2"/> Volver
+                                        </button>
+                                        <button type="button" class="btn btn-wizard btn-wizard-primary" id="btn-next-3" disabled="disabled">
+                                            Continuar a Resumen <i class="fa fa-arrow-right ml-2"/>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Step 4: Confirmation -->
+                                <div class="step-content d-none" id="step-4">
+                                    <h2 class="text-center mb-4" style="color: #333;">Confirma tu Reserva</h2>
+                                    <div class="summary-box">
+                                        <h4 class="mb-3"><i class="fa fa-scissors mr-2"/> Servicios</h4>
+                                        <ul id="summary-services" class="list-unstyled"></ul>
+                                    </div>
+                                    <div class="summary-box">
+                                        <h4 class="mb-3"><i class="fa fa-calendar mr-2"/> Detalles de la Cita</h4>
+                                        <p><strong>Fecha:</strong> <span id="summary-date"></span></p>
+                                        <p><strong>Hora:</strong> <span id="summary-time"></span></p>
+                                        <p><strong>Duración total:</strong> <span id="summary-duration"></span></p>
+                                        <p class="mb-0"><strong class="text-success">Total a pagar:</strong> <span id="summary-total" class="text-success"></span></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="color: #333;"><strong>Notas Adicionales (Opcional)</strong></label>
+                                        <textarea class="form-control" id="appointment_notes" rows="3" placeholder="¿Alguna preferencia o solicitud especial?" style="border-radius: 15px;"></textarea>
+                                    </div>
+                                    <div id="booking-result" class="d-none"></div>
+                                    <div class="text-center mt-4">
+                                        <button type="button" class="btn btn-wizard btn-outline-secondary mr-3" id="btn-back-4">
+                                            <i class="fa fa-arrow-left mr-2"/> Volver
+                                        </button>
+                                        <button type="button" class="btn btn-wizard btn-wizard-primary btn-lg" id="btn-confirm">
+                                            <i class="fa fa-check-circle mr-2"/> Confirmar Reserva
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    
+    <!-- Booking Menu -->
+    <record id="menu_appointment_booking" model="website.menu">
+        <field name="name">Reservar Cita</field>
+        <field name="url">/appointment/book</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+
+</odoo>

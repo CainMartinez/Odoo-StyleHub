@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Home Page Template -->
+    <template id="home_page_template" name="StyleHub Home">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Inicio</t>
+            
+            <!-- Hero Section -->
+            <section class="hero-home">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">StyleHub</h1>
+                        <p class="hero-subtitle">Expertos en Belleza y Estilo</p>
+                        <p class="hero-description">
+                            Vive la experiencia de transformación. Nuestro equipo de profesionales te ofrece 
+                            servicios de la más alta calidad en un ambiente moderno y acogedor.
+                        </p>
+                        <a href="/appointment/book" class="hero-cta">
+                            <i class="fa fa-calendar-check-o"></i> Reserva Tu Cita Ahora
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Philosophy Section -->
+            <section class="home-section bg-white">
+                <div class="container">
+                    <h2 class="section-title">Nuestra Filosofía</h2>
+                    <p class="section-subtitle">Excelencia en Cada Detalle</p>
+                    <div class="philosophy-box">
+                        <p class="section-description">
+                            La filosofía de StyleHub es hacer sentir a nuestros clientes una experiencia única e inigualable. 
+                            Nuestro enfoque se centra en la atención al detalle, la precisión y la creatividad. 
+                            Valoramos la individualidad de cada cliente para comprender sus necesidades y deseos, 
+                            y así poder brindarles un servicio personalizado y adaptado a su estilo y personalidad.
+                            <br/><br/>
+                            Trabajamos con un equipo de profesionales altamente capacitados y apasionados, 
+                            que comparten nuestra visión de excelencia y se mantienen al tanto de las últimas tendencias y técnicas.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Services Section -->
+            <section class="home-section bg-light">
+                <div class="container">
+                    <h2 class="section-title">¿Qué Ofrecemos?</h2>
+                    <p class="section-subtitle">Servicios Premium para Tu Transformación</p>
+                    <p class="section-description">
+                        Descubre nuestra amplia gama de servicios diseñados para realzar tu belleza natural. 
+                        Desde cortes vanguardistas hasta tratamientos capilares de última generación.
+                    </p>
+                    <div class="row mt-5">
+                        <div class="col-md-4 mb-4">
+                            <a href="/nuestros-servicios" class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fa fa-scissors"></i>
+                                </div>
+                                <h3 class="feature-title">Cortes y Peinados</h3>
+                                <p class="feature-text">
+                                    Cortes personalizados y peinados para cualquier ocasión. 
+                                    Nuestros estilistas crean looks que destacan tu personalidad.
+                                </p>
+                                <span class="feature-link">
+                                    Ver Servicios <i class="fa fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <a href="/nuestros-servicios" class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fa fa-paint-brush"></i>
+                                </div>
+                                <h3 class="feature-title">Coloración</h3>
+                                <p class="feature-text">
+                                    Técnicas avanzadas de coloración. Desde balayage hasta mechas, 
+                                    conseguimos el color perfecto para ti.
+                                </p>
+                                <span class="feature-link">
+                                    Ver Servicios <i class="fa fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <a href="/nuestros-servicios" class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <h3 class="feature-title">Tratamientos</h3>
+                                <p class="feature-text">
+                                    Tratamientos capilares premium que nutren y reparan tu cabello, 
+                                    devolviéndole brillo y vitalidad.
+                                </p>
+                                <span class="feature-link">
+                                    Ver Servicios <i class="fa fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Team Section -->
+            <section class="home-section bg-white">
+                <div class="container">
+                    <h2 class="section-title">Nuestro Equipo</h2>
+                    <p class="section-subtitle">Profesionales Apasionados por la Belleza</p>
+                    <p class="section-description">
+                        Conoce a nuestro equipo de estilistas expertos, comprometidos con ofrecerte 
+                        la mejor experiencia y resultados excepcionales en cada visita.
+                    </p>
+                    <div class="row mt-5">
+                        <div class="col-md-6 mb-4">
+                            <a href="/nuestro-equipo" class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <h3 class="feature-title">Estilistas Profesionales</h3>
+                                <p class="feature-text">
+                                    Nuestro equipo está formado por profesionales altamente cualificados 
+                                    con años de experiencia en las últimas tendencias.
+                                </p>
+                                <span class="feature-link">
+                                    Conocer al Equipo <i class="fa fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <a href="/nuestro-equipo" class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fa fa-certificate"></i>
+                                </div>
+                                <h3 class="feature-title">Formación Continua</h3>
+                                <p class="feature-text">
+                                    Nos mantenemos actualizados con las últimas técnicas y tendencias 
+                                    del mundo de la peluquería profesional.
+                                </p>
+                                <span class="feature-link">
+                                    Conocer al Equipo <i class="fa fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="container">
+                    <h2>¿Listo para Tu Transformación?</h2>
+                    <p>Reserva tu cita ahora y descubre la experiencia StyleHub</p>
+                    <a href="/appointment/book" class="cta-button">
+                        <i class="fa fa-calendar-check-o"></i> Reservar Cita
+                    </a>
+                </div>
+            </section>
+        </t>
+    </template>
+
+</odoo>
