@@ -6,25 +6,30 @@
         <t t-call="website.layout">
             <t t-set="additional_title">Inicio</t>
             
-            <!-- Hero Section -->
-            <section class="hero-home">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title">StyleHub</h1>
-                        <p class="hero-subtitle">Expertos en Belleza y Estilo</p>
-                        <p class="hero-description">
-                            Vive la experiencia de transformación. Nuestro equipo de profesionales te ofrece 
-                            servicios de la más alta calidad en un ambiente moderno y acogedor.
-                        </p>
-                        <a href="/appointment/book" class="hero-cta">
-                            <i class="fa fa-calendar-check-o"></i> Reserva Tu Cita Ahora
-                        </a>
+            <!-- Hero Section with Fixed Background -->
+            <section class="hero-home-wrapper">
+                <div class="hero-background-fixed">
+                    <!-- Imagen de fondo fija - placeholder por ahora, se puede cambiar en CSS -->
+                </div>
+                <div class="hero-overlay">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">StyleHub</h1>
+                            <p class="hero-subtitle">Expertos en Belleza y Estilo</p>
+                            <p class="hero-description">
+                                Vive la experiencia de transformación. Nuestro equipo de profesionales te ofrece 
+                                servicios de la más alta calidad en un ambiente moderno y acogedor.
+                            </p>
+                            <a href="/appointment/book" class="hero-cta">
+                                <i class="fa fa-calendar-check-o"></i> Reserva Tu Cita Ahora
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
             
             <!-- Philosophy Section -->
-            <section class="home-section bg-white">
+            <section class="home-section bg-white content-overlay">
                 <div class="container">
                     <h2 class="section-title">Nuestra Filosofía</h2>
                     <p class="section-subtitle">Excelencia en Cada Detalle</p>
@@ -43,7 +48,7 @@
             </section>
             
             <!-- Services Section -->
-            <section class="home-section bg-light">
+            <section class="home-section bg-light content-overlay">
                 <div class="container">
                     <h2 class="section-title">¿Qué Ofrecemos?</h2>
                     <p class="section-subtitle">Servicios Premium para Tu Transformación</p>
@@ -102,7 +107,7 @@
             </section>
             
             <!-- Team Section -->
-            <section class="home-section bg-white">
+            <section class="home-section bg-white content-overlay">
                 <div class="container">
                     <h2 class="section-title">Nuestro Equipo</h2>
                     <p class="section-subtitle">Profesionales Apasionados por la Belleza</p>
@@ -146,7 +151,7 @@
             </section>
             
             <!-- CTA Section -->
-            <section class="cta-section">
+            <section class="cta-section content-overlay">
                 <div class="container">
                     <h2>¿Listo para Tu Transformación?</h2>
                     <p>Reserva tu cita ahora y descubre la experiencia StyleHub</p>
