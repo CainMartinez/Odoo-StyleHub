@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Tutorial Wizard Form View -->
+    <record id="view_tutorial_wizard_form" model="ir.ui.view">
+        <field name="name">stylehub.tutorial.wizard.form</field>
+        <field name="model">stylehub.tutorial.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Tutorial StyleHub para Empleados">
+                
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="step_title" readonly="1"/>
+                        </h1>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="tutorial-progress mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">
+                                <i class="fa fa-map-signs"></i>
+                                Paso <field name="step" readonly="1" class="oe_inline"/> de <field name="total_steps" readonly="1" class="oe_inline"/>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <group>
+                        <field name="step_content" 
+                               widget="html" 
+                               readonly="1" 
+                               nolabel="1"
+                               class="tutorial-content"/>
+                    </group>
+                </sheet>
+                
+                <footer>
+                    <button string="🔄 Reiniciar" 
+                            name="action_restart" 
+                            type="object" 
+                            class="btn-link float-left"/>
+                    <button string="◀ Anterior" 
+                            name="action_previous" 
+                            type="object" 
+                            class="btn-secondary"
+                            invisible="step == 1"/>
+                    <button string="Siguiente ▶" 
+                            name="action_next" 
+                            type="object" 
+                            class="btn-primary"
+                            invisible="step == total_steps"/>
+                    <button string="🎉 Finalizar Tutorial" 
+                            name="action_finish" 
+                            type="object" 
+                            class="btn-success"
+                            invisible="step != total_steps"/>
+                    <button string="Cerrar" 
+                            special="cancel" 
+                            class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Action to open the tutorial -->
+    <record id="action_tutorial_wizard" model="ir.actions.act_window">
+        <field name="name">Tutorial para Empleados</field>
+        <field name="res_model">stylehub.tutorial.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+    
+    <!-- Menu Item in Top Bar -->
+    <menuitem id="menu_tutorial_help"
+              name="Ayuda"
+              parent="style_hub_base.menu_stylehub_root"
+              sequence="100"/>
+    
+    <menuitem id="menu_tutorial_wizard"
+              name="Tutorial para Empleados"
+              parent="menu_tutorial_help"
+              action="action_tutorial_wizard"
+              sequence="10"/>
+
+</odoo>

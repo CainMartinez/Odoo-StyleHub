@@ -1,0 +1,176 @@
+/* StyleHub Tutorial Wizard Styles */
+
+.tutorial-content {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.tutorial-intro h2 {
+    color: #3EBFBD;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tutorial-intro .lead {
+    font-size: 1.2rem;
+    color: #546e7a;
+    margin-bottom: 2rem;
+}
+
+.feature-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.feature-list i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.tutorial-step h3 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3EBFBD;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.step-instructions {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.step-instructions h4 {
+    color: #3EBFBD;
+    margin-bottom: 15px;
+}
+
+.step-instructions ol {
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.step-instructions ol > li {
+    counter-increment: item;
+    margin-bottom: 15px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.step-instructions ol > li::before {
+    content: counter(item);
+    background: #3EBFBD;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.example-box {
+    background: linear-gradient(135deg, rgba(62,191,189,0.05) 0%, rgba(45,155,153,0.05) 100%);
+    border-left: 4px solid #3EBFBD;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.example-box h5 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.info-box {
+    border: 2px solid #3EBFBD;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.info-box h5 {
+    color: #3EBFBD;
+    margin-bottom: 15px;
+}
+
+.workflow-box {
+    border-radius: 10px;
+}
+
+.vip-section, .calendar-section {
+    margin-top: 30px;
+}
+
+.view-option {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.view-option:hover {
+    border-color: #3EBFBD;
+    box-shadow: 0 5px 15px rgba(62,191,189,0.2);
+}
+
+.view-option h5 {
+    color: #3EBFBD;
+    margin-bottom: 10px;
+}
+
+.practice-item {
+    background: white;
+    border-left: 4px solid #3EBFBD;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.practice-item h4 {
+    margin-bottom: 15px;
+}
+
+.final-tips {
+    background: linear-gradient(135deg, #3EBFBD 0%, #2D9B99 100%);
+}
+
+.tutorial-progress .progress {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+.tutorial-progress .badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #3EBFBD 0%, #2D9B99 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tutorial-intro h2 {
+        font-size: 1.5rem;
+    }
+    
+    .tutorial-step h3 {
+        font-size: 1.3rem;
+    }
+    
+    .step-instructions ol > li {
+        padding-left: 35px;
+    }
+}
