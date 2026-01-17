@@ -83,19 +83,18 @@ class TutorialWizard(models.TransientModel):
                             
                             <div class="step-instructions">
                                 <h4><i class="fa fa-arrow-right text-primary"></i> Cómo crear un servicio:</h4>
-                                <ol>
-                                    <li>Ve a <strong>Configuración → Servicios</strong></li>
-                                    <li>Haz clic en <strong>Crear</strong></li>
-                                    <li>Completa los campos:
-                                        <ul>
-                                            <li><strong>Nombre:</strong> Ej. "Corte de Caballero", "Tinte Completo"</li>
-                                            <li><strong>Duración:</strong> En horas (0.5 = 30 min, 1.5 = 1h 30min)</li>
-                                            <li><strong>Precio Base:</strong> Precio estándar del servicio</li>
-                                            <li><strong>Descripción:</strong> Detalles adicionales (opcional)</li>
-                                        </ul>
-                                    </li>
-                                    <li>Guarda el servicio</li>
-                                </ol>
+                                <div style="padding-left: 20px;">
+                                    <p><strong>1.</strong> Ve a <strong>Configuración → Servicios</strong></p>
+                                    <p><strong>2.</strong> Haz clic en <strong>Crear</strong></p>
+                                    <p><strong>3.</strong> Completa los campos:</p>
+                                    <ul style="list-style-type: disc; margin-left: 30px;">
+                                        <li><strong>Nombre:</strong> Ej. "Corte de Caballero", "Tinte Completo"</li>
+                                        <li><strong>Duración:</strong> En horas (0.5 = 30 min, 1.5 = 1h 30min)</li>
+                                        <li><strong>Precio Base:</strong> Precio estándar del servicio</li>
+                                        <li><strong>Descripción:</strong> Detalles adicionales (opcional)</li>
+                                    </ul>
+                                    <p><strong>4.</strong> Guarda el servicio</p>
+                                </div>
                             </div>
                             
                             <div class="alert alert-warning">
@@ -149,19 +148,18 @@ class TutorialWizard(models.TransientModel):
                             
                             <div class="step-instructions">
                                 <h4><i class="fa fa-arrow-right text-primary"></i> Cómo registrar un estilista:</h4>
-                                <ol>
-                                    <li>Navega a <strong>Configuración → Estilistas</strong></li>
-                                    <li>Pulsa <strong>Crear</strong></li>
-                                    <li>Rellena la información:
-                                        <ul>
-                                            <li><strong>Nombre:</strong> Nombre completo del estilista</li>
-                                            <li><strong>Email:</strong> Para contacto interno</li>
-                                            <li><strong>Teléfono:</strong> Número de contacto</li>
-                                            <li><strong>Activo:</strong> Marcado por defecto (desmarca si ya no trabaja)</li>
-                                        </ul>
-                                    </li>
-                                    <li>Guarda el registro</li>
-                                </ol>
+                                <div style="padding-left: 20px;">
+                                    <p><strong>1.</strong> Navega a <strong>Configuración → Estilistas</strong></p>
+                                    <p><strong>2.</strong> Pulsa <strong>Crear</strong></p>
+                                    <p><strong>3.</strong> Rellena la información:</p>
+                                    <ul style="list-style-type: disc; margin-left: 30px;">
+                                        <li><strong>Nombre:</strong> Nombre completo del estilista</li>
+                                        <li><strong>Email:</strong> Para contacto interno</li>
+                                        <li><strong>Teléfono:</strong> Número de contacto</li>
+                                        <li><strong>Activo:</strong> Marcado por defecto (desmarca si ya no trabaja)</li>
+                                    </ul>
+                                    <p><strong>4.</strong> Guarda el registro</p>
+                                </div>
                             </div>
                             
                             <div class="info-box bg-light p-3 rounded">
@@ -190,13 +188,14 @@ class TutorialWizard(models.TransientModel):
                             
                             <div class="step-instructions">
                                 <h4><i class="fa fa-arrow-right text-primary"></i> Proceso para crear una cita:</h4>
-                                <ol>
-                                    <li>Ve a <strong>Citas → Citas</strong></li>
-                                    <li>Haz clic en <strong>Crear</strong></li>
-                                    <li>Completa el formulario:
+                                <div style="padding-left: 20px;">
+                                    <p><strong>1.</strong> Ve a <strong>Citas → Citas</strong></p>
+                                    <p><strong>2.</strong> Haz clic en <strong>Crear</strong></p>
+                                    <p><strong>3.</strong> Completa el formulario:</p>
+                                    <div style="margin-left: 30px;">
                                         <div class="field-group mt-2">
                                             <h5>Información Básica:</h5>
-                                            <ul>
+                                            <ul style="list-style-type: disc;">
                                                 <li><strong>Cliente:</strong> Selecciona o crea un nuevo cliente</li>
                                                 <li><strong>Estilista:</strong> Asigna el profesional que atenderá</li>
                                                 <li><strong>Fecha y Hora de Inicio:</strong> Cuándo comienza la cita</li>
@@ -204,7 +203,7 @@ class TutorialWizard(models.TransientModel):
                                         </div>
                                         <div class="field-group mt-2">
                                             <h5>Servicios:</h5>
-                                            <ul>
+                                            <ul style="list-style-type: disc;">
                                                 <li>Añade uno o varios servicios desde la pestaña "Servicios"</li>
                                                 <li>El precio se copia automáticamente pero puedes ajustarlo</li>
                                                 <li><strong>La hora de fin se calcula automáticamente</strong> según las duraciones</li>
@@ -212,15 +211,15 @@ class TutorialWizard(models.TransientModel):
                                         </div>
                                         <div class="field-group mt-2">
                                             <h5>Notas (Opcional):</h5>
-                                            <ul>
+                                            <ul style="list-style-type: disc;">
                                                 <li>Preferencias del cliente</li>
                                                 <li>Alergias o consideraciones especiales</li>
                                                 <li>Peticiones específicas</li>
                                             </ul>
                                         </div>
-                                    </li>
-                                    <li>Guarda como borrador o confirma directamente</li>
-                                </ol>
+                                    </div>
+                                    <p><strong>4.</strong> Guarda como borrador o confirma directamente</p>
+                                </div>
                             </div>
                             
                             <div class="workflow-box bg-primary text-white p-3 rounded mt-3">
