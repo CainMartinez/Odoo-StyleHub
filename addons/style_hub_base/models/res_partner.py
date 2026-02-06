@@ -7,28 +7,28 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     appointment_count = fields.Integer(
-        string='Total Appointments',
+        string='Total de Citas',
         compute='_compute_appointment_stats',
         store=False,
-        help='Total number of appointments for this customer'
+        help='Número total de citas para este cliente'
     )
     
     completed_appointment_count = fields.Integer(
-        string='Completed Appointments',
+        string='Citas Completadas',
         compute='_compute_appointment_stats',
         store=False,
-        help='Number of completed appointments'
+        help='Número de citas completadas'
     )
     
     frequent_client = fields.Boolean(
-        string='Frequent Client',
+        string='Cliente Frecuente',
         compute='_compute_frequent_client',
         store=True,
-        help='Automatically marked as VIP if customer has more than 5 completed appointments'
+        help='Marcado automáticamente como VIP si el cliente tiene más de 5 citas completadas'
     )
 
     def _compute_appointment_stats(self):
-        """Calculate appointment statistics for each customer"""
+        """Calcular estadísticas de citas para cada cliente"""
         for record in self:
             appointments = self.env['stylehub.appointment'].search([
                 ('customer_id', '=', record.id)
@@ -41,11 +41,11 @@ class ResPartner(models.Model):
     @api.depends('completed_appointment_count')
     def _compute_frequent_client(self):
         """
-        CRITICAL VIP LOGIC: Automatically mark as frequent client if more than 5 completed appointments.
-        This ensures our best customers get special treatment!
+        LÓGICA VIP CRÍTICA: Marcar automáticamente como cliente frecuente si tiene más de 5 citas completadas.
+        ¡Esto asegura que nuestros mejores clientes reciban trato especial!
         """
         for record in self:
-            # Recalculate completed appointments
+            # Recalcular citas completadas
             completed_count = self.env['stylehub.appointment'].search_count([
                 ('customer_id', '=', record.id),
                 ('state', '=', 'done')

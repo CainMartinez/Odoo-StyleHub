@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <!-- Add VIP ribbon -->
             <xpath expr="//sheet" position="before">
-                <widget name="web_ribbon" title="VIP Client" bg_color="text-bg-warning" 
+                <widget name="web_ribbon" title="Cliente VIP" bg_color="text-bg-warning" 
                         invisible="not frequent_client"/>
             </xpath>
             
@@ -21,7 +21,7 @@
                         <span class="o_stat_value">
                             <field name="appointment_count"/>
                         </span>
-                        <span class="o_stat_text">Appointments</span>
+                        <span class="o_stat_text">Citas</span>
                     </div>
                 </button>
                 <button name="%(action_appointment)d" type="action"
@@ -32,7 +32,7 @@
                         <span class="o_stat_value text-warning">
                             <field name="completed_appointment_count"/> ⭐
                         </span>
-                        <span class="o_stat_text">Completed</span>
+                        <span class="o_stat_text">Completadas</span>
                     </div>
                 </button>
             </xpath>
@@ -40,7 +40,7 @@
             <!-- Add VIP badge in title area for visibility -->
             <xpath expr="//field[@name='name']" position="after">
                 <div class="badge text-bg-warning fs-5 ms-2" invisible="not frequent_client">
-                    ⭐ VIP FREQUENT CLIENT ⭐
+                    ⭐ CLIENTE VIP FRECUENTE ⭐
                 </div>
                 <field name="frequent_client" invisible="1"/>
             </xpath>

@@ -6,29 +6,29 @@
               sequence="10"
               web_icon="style_hub_base,static/description/icon.png"/>
 
-    <!-- Configuration Menu -->
+    <!-- Menú de Configuración -->
     <menuitem id="menu_stylehub_config"
-              name="Configuration"
+              name="Configuración"
               parent="menu_stylehub_root"
               sequence="100"/>
 
-    <!-- Services Menu -->
+    <!-- Menú de Servicios -->
     <menuitem id="menu_stylehub_service"
-              name="Services"
+              name="Servicios"
               parent="menu_stylehub_config"
               action="action_service"
               sequence="10"/>
 
-    <!-- Stylists Menu -->
+    <!-- Menú de Estilistas -->
     <menuitem id="menu_stylehub_stylist"
-              name="Stylists"
+              name="Estilistas"
               parent="menu_stylehub_config"
               action="action_stylist"
               sequence="20"/>
 
-    <!-- Appointments Menu -->
+    <!-- Menú de Citas -->
     <menuitem id="menu_stylehub_appointment"
-              name="Appointments"
+              name="Citas"
               parent="menu_stylehub_root"
               action="action_appointment"
               sequence="10"/>

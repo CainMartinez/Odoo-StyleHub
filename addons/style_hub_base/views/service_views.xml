@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Service List View -->
-    <record id="view_service_tree" model="ir.ui.view">
-        <field name="name">stylehub.service.tree</field>
+    <record id="view_service_list" model="ir.ui.view">
+        <field name="name">stylehub.service.list</field>
         <field name="model">stylehub.service</field>
         <field name="arch" type="xml">
-            <list string="Services">
+            <list string="Servicios">
                 <field name="name"/>
                 <field name="duration" widget="float_time"/>
                 <field name="base_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
@@ -20,14 +20,11 @@
         <field name="name">stylehub.service.form</field>
         <field name="model">stylehub.service</field>
         <field name="arch" type="xml">
-            <form string="Service">
+            <form string="Servicio">
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <field name="active" widget="boolean_button" options="{'terminology': 'active'}"/>
-                    </div>
                     <group>
                         <group>
-                            <field name="name" placeholder="e.g., Men's Haircut"/>
+                            <field name="name" placeholder="ej: Corte de Hombre"/>
                             <field name="duration" widget="float_time"/>
                         </group>
                         <group>
@@ -36,7 +33,7 @@
                         </group>
                     </group>
                     <group>
-                        <field name="description" placeholder="Additional details about this service..."/>
+                        <field name="description" placeholder="Detalles adicionales sobre este servicio..."/>
                     </group>
                 </sheet>
             </form>
@@ -45,15 +42,15 @@
 
     <!-- Service Action -->
     <record id="action_service" model="ir.actions.act_window">
-        <field name="name">Services</field>
+        <field name="name">Servicios</field>
         <field name="res_model">stylehub.service</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create your first service!
+                ¡Crea tu primer servicio!
             </p>
             <p>
-                Define all the services offered at your salon with their duration and pricing.
+                Define todos los servicios ofrecidos en tu salón con su duración y precio.
             </p>
         </field>
     </record>

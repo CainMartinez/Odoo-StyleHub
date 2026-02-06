@@ -2,17 +2,7 @@
 {
     'name': 'StyleHub',
     'version': '18.0.1.0.0',
-    'summary': 'Hair Salon Management System',
-    'description': """
-        Complete hair salon management system for StyleHub.
-        Features:
-        - Service catalog with pricing and duration
-        - Stylist management
-        - Appointment scheduling with automatic end time calculation
-        - Overlap prevention for stylist availability
-        - VIP client detection
-        - Calendar and Kanban views
-    """,
+    'summary': 'Sistema de gestión para salones de peluquería StyleHub',
     'author': 'Caín Martínez',
     'website': 'https://cain-dev.es',
     'license': 'LGPL-3',

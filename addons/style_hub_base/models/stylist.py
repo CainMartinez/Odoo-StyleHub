@@ -5,40 +5,40 @@ from odoo import models, fields
 
 class Stylist(models.Model):
     _name = 'stylehub.stylist'
-    _description = 'Hair Salon Stylist'
+    _description = 'Estilista de Peluquería'
     _order = 'name'
 
     name = fields.Char(
-        string='Stylist Name',
+        string='Nombre del Estilista',
         required=True,
-        help='Name of the stylist/employee'
+        help='Nombre del estilista/empleado'
     )
     
     active = fields.Boolean(
-        string='Active',
+        string='Activo',
         default=True,
-        help='Uncheck if the stylist is no longer working at the salon'
+        help='Desmarcar si el estilista ya no trabaja en el salón'
     )
     
     email = fields.Char(
-        string='Email',
-        help='Contact email for the stylist'
+        string='Correo Electrónico',
+        help='Correo de contacto del estilista'
     )
     
     phone = fields.Char(
-        string='Phone',
-        help='Contact phone number'
+        string='Teléfono',
+        help='Número de teléfono de contacto'
     )
     
     appointment_count = fields.Integer(
-        string='Total Appointments',
+        string='Total de Citas',
         compute='_compute_appointment_count',
         store=False,
-        help='Total number of appointments assigned to this stylist'
+        help='Número total de citas asignadas a este estilista'
     )
 
     def _compute_appointment_count(self):
-        """Count appointments for each stylist"""
+        """Contar citas para cada estilista"""
         for record in self:
             record.appointment_count = self.env['stylehub.appointment'].search_count([
                 ('stylist_id', '=', record.id)

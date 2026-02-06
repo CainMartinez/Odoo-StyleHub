@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Stylist List View -->
-    <record id="view_stylist_tree" model="ir.ui.view">
-        <field name="name">stylehub.stylist.tree</field>
+    <record id="view_stylist_list" model="ir.ui.view">
+        <field name="name">stylehub.stylist.list</field>
         <field name="model">stylehub.stylist</field>
         <field name="arch" type="xml">
-            <list string="Stylists">
+            <list string="Estilistas">
                 <field name="name"/>
                 <field name="email"/>
                 <field name="phone"/>
@@ -20,20 +20,20 @@
         <field name="name">stylehub.stylist.form</field>
         <field name="model">stylehub.stylist</field>
         <field name="arch" type="xml">
-            <form string="Stylist">
+            <form string="Estilista">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="%(action_appointment)d" type="action"
                                 class="oe_stat_button" icon="fa-calendar"
                                 context="{'default_stylist_id': id, 'search_default_stylist_id': id}">
-                            <field name="appointment_count" widget="statinfo" string="Appointments"/>
+                            <field name="appointment_count" widget="statinfo" string="Citas"/>
                         </button>
                     </div>
-                    <widget name="web_ribbon" title="Inactive" bg_color="text-bg-danger" 
+                    <widget name="web_ribbon" title="Inactivo" bg_color="text-bg-danger" 
                             invisible="active"/>
                     <group>
                         <group>
-                            <field name="name" placeholder="Stylist Name"/>
+                            <field name="name" placeholder="Nombre del Estilista"/>
                             <field name="active" invisible="1"/>
                         </group>
                         <group>
@@ -74,7 +74,7 @@
                             <div class="o_kanban_record_bottom">
                                 <div class="oe_kanban_bottom_left">
                                     <span class="badge text-bg-info">
-                                        <i class="fa fa-calendar"/> <field name="appointment_count"/> appointments
+                                        <i class="fa fa-calendar"/> <field name="appointment_count"/> citas
                                     </span>
                                 </div>
                             </div>
@@ -87,15 +87,15 @@
 
     <!-- Stylist Action -->
     <record id="action_stylist" model="ir.actions.act_window">
-        <field name="name">Stylists</field>
+        <field name="name">Estilistas</field>
         <field name="res_model">stylehub.stylist</field>
         <field name="view_mode">kanban,list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Add your first stylist!
+                ¡Añade tu primer estilista!
             </p>
             <p>
-                Register all your salon employees here to assign them to appointments.
+                Registra aquí a todos los empleados de tu salón para asignarlos a las citas.
             </p>
         </field>
     </record>
