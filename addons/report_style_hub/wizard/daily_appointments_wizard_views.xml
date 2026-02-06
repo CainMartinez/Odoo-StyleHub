@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Formulario del Asistente de Citas Diarias -->
+    <record id="view_daily_appointments_wizard_form" model="ir.ui.view">
+        <field name="name">report.daily.appointments.wizard.form</field>
+        <field name="model">report.daily.appointments.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Informe de Citas Diarias">
+                <group>
+                    <field name="report_date"/>
+                </group>
+                <footer>
+                    <button string="Imprimir Informe" 
+                            name="action_print_report" 
+                            type="object" 
+                            class="btn-primary"/>
+                    <button string="Cancelar" 
+                            special="cancel" 
+                            class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Acción del Asistente -->
+    <record id="action_daily_appointments_wizard" model="ir.actions.act_window">
+        <field name="name">Informe de Citas Diarias</field>
+        <field name="res_model">report.daily.appointments.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

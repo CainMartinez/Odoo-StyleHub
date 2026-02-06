@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Menú de Reportes - antes del Tutorial -->
+    <menuitem id="menu_stylehub_reports"
+              name="Informes"
+              parent="style_hub_base.menu_stylehub_root"
+              sequence="40"/>
+    
+    <!-- Submenú para Reporte de Citas Diarias -->
+    <menuitem id="menu_daily_appointments_report"
+              name="Citas Diarias"
+              parent="menu_stylehub_reports"
+              action="action_daily_appointments_wizard"
+              sequence="1"/>
+
+</odoo>

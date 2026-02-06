@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Acción del Reporte -->
+    <record id="action_report_daily_appointments" model="ir.actions.report">
+        <field name="name">Citas Diarias</field>
+        <field name="model">stylehub.appointment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">report_style_hub.report_daily_appointments_document</field>
+        <field name="report_file">report_style_hub.report_daily_appointments_document</field>
+        <field name="print_report_name">context.get('report_filename') or ('Citas-%02d-%02d-%04d' % (object.start_datetime.day, object.start_datetime.month, object.start_datetime.year) if object.start_datetime else 'Citas')</field>
+    </record>
+
+    <!-- Template del Reporte -->
+    <template id="report_daily_appointments_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2 class="text-center mb-4">Informe de Citas Diarias</h2>
+                    <p class="text-center text-muted">
+                        <t t-if="report_date">
+                            <t t-esc="report_date"/>
+                        </t>
+                    </p>
+
+                    <table class="table table-sm table-bordered mt-4">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Hora</th>
+                                <th>Cliente</th>
+                                <th>Estilista</th>
+                                <th>Servicios</th>
+                                <th class="text-end">Duración</th>
+                                <th class="text-end">Precio</th>
+                                <th class="text-center">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="docs and len(docs) &gt; 0">
+                                <t t-foreach="docs" t-as="apt">
+                                    <tr>
+                                        <td>
+                                            <t t-if="apt.start_datetime">
+                                                <span t-esc="apt.start_datetime.strftime('%H:%M')"/>
+                                                -
+                                                <span t-esc="apt.end_datetime.strftime('%H:%M') if apt.end_datetime else ''"/>
+                                            </t>
+                                            <t t-else="">SIN HORA</t>
+                                        </td>
+                                        <td><span t-esc="apt.customer_id.name if apt.customer_id else 'SIN CLIENTE'"/></td>
+                                        <td><span t-esc="apt.stylist_id.name if apt.stylist_id else 'SIN ESTILISTA'"/></td>
+                                        <td>
+                                            <t t-if="apt.line_ids">
+                                                <t t-foreach="apt.line_ids" t-as="line">
+                                                    <div><span t-esc="line.service_id.name"/></div>
+                                                </t>
+                                            </t>
+                                            <t t-else="">SIN SERVICIOS</t>
+                                        </td>
+                                        <td class="text-end">
+                                            <t t-call="report_style_hub.duration_format">
+                                                <t t-set="duration" t-value="apt.total_duration or 0"/>
+                                            </t>
+                                        </td>
+                                        <td class="text-end">
+                                            <t t-call="report_style_hub.price_format">
+                                                <t t-set="price" t-value="apt.total_price or 0"/>
+                                            </t>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-if="apt.state == 'draft'" class="badge bg-secondary">Borrador</span>
+                                            <span t-if="apt.state == 'confirmed'" class="badge bg-warning">Confirmada</span>
+                                            <span t-if="apt.state == 'done'" class="badge bg-success">Completada</span>
+                                            <span t-if="apt.state == 'cancelled'" class="badge bg-danger">Cancelada</span>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <tr>
+                                    <td colspan="7" class="text-center text-muted">No se encontraron citas para esta fecha.</td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <tfoot t-if="docs and len(docs) &gt; 0">
+                            <tr class="fw-bold">
+                                <td colspan="4" class="text-end">Total de Citas:</td>
+                                <td class="text-end"><t t-esc="len(docs)"/></td>
+                                <td class="text-end">
+                                    <t t-call="report_style_hub.price_format">
+                                        <t t-set="price" t-value="sum(apt.total_price or 0 for apt in docs)"/>
+                                    </t>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template de Formato de Duración -->
+    <template id="duration_format">
+        <t t-set="hours" t-value="int(duration)"/>
+        <t t-set="minutes" t-value="int((duration - hours) * 60)"/>
+        <t t-set="total_minutes" t-value="int(duration * 60)"/>
+        
+        <t t-if="duration == 1.0">60 minutos</t>
+        <t t-elif="hours == 0">
+            <t t-esc="total_minutes"/> minutos
+        </t>
+        <t t-elif="minutes == 0">
+            <t t-esc="hours"/> <t t-if="hours == 1">hora</t><t t-else="">horas</t>
+        </t>
+        <t t-else="">
+            <t t-esc="hours"/> <t t-if="hours == 1">hora</t><t t-else="">horas</t>
+            y <t t-esc="minutes"/> minutos
+        </t>
+    </template>
+
+    <!-- Price Format Template -->
+    <template id="price_format">
+        <t t-set="int_price" t-value="int(price)"/>
+        <t t-if="price == int_price">
+            <t t-esc="int_price"/> €
+        </t>
+        <t t-else="">
+            <t t-esc="'%.2f' % price"/> €
+        </t>
+    </template>
+
+</odoo>
