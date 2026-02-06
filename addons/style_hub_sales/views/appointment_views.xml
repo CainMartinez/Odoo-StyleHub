@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Appointment Form View - Add Sale Order and Invoice Buttons -->
+    <record id="view_stylehub_appointment_form_sales" model="ir.ui.view">
+        <field name="name">stylehub.appointment.form.sales</field>
+        <field name="model">stylehub.appointment</field>
+        <field name="inherit_id" ref="style_hub_base.view_appointment_form"/>
+        <field name="arch" type="xml">
+            
+            <!-- Create button_box and add smart buttons -->
+            <xpath expr="//sheet" position="inside">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_sale_order" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-shopping-cart"
+                            invisible="not sale_order_id">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text">Pedido</span>
+                        </div>
+                    </button>
+                    
+                    <button name="action_view_invoice" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-file-text-o"
+                            invisible="not invoice_id">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text">Factura</span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+            
+            <!-- Add sale order and invoice fields -->
+            <xpath expr="//field[@name='notes']" position="after">
+                <group string="Sales Integration" invisible="not sale_order_id and not invoice_id">
+                    <field name="sale_order_id" readonly="1" invisible="not sale_order_id"/>
+                    <field name="invoice_id" readonly="1" invisible="not invoice_id"/>
+                </group>
+            </xpath>
+            
+        </field>
+    </record>
+
+    <!-- Appointment List View - Add Sale Order Column -->
+    <record id="view_stylehub_appointment_list_sales" model="ir.ui.view">
+        <field name="name">stylehub.appointment.list.sales</field>
+        <field name="model">stylehub.appointment</field>
+        <field name="inherit_id" ref="style_hub_base.view_appointment_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="sale_order_id" optional="hide"/>
+                <field name="invoice_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
