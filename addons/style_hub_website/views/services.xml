@@ -20,25 +20,20 @@
                                 <div class="col-md-6 col-lg-4 mb-4">
                                     <div class="service-product-card" t-att-data-service-id="service.id">
                                         <div class="service-icon">
-                                            <i class="fa fa-scissors"/>
+                                            <i t-att-class="service.icon_class or 'fa fa-scissors'"/>
                                         </div>
                                         <h3 class="service-name">
                                             <t t-esc="service.name"/>
                                         </h3>
                                         <div class="service-duration">
                                             <i class="fa fa-clock-o" style="color: #3EBFBD;"/>
-                                            <t t-if="service.duration &lt; 1">
-                                                <t t-esc="int(service.duration * 60)"/> minutos
-                                            </t>
-                                            <t t-else="">
-                                                <t t-esc="service.duration"/> horas
-                                            </t>
+                                            <t t-esc="service.duration_display"/>
                                         </div>
                                         <p class="service-description">
                                             <t t-esc="service.description or 'Servicio profesional de peluquería y estética'"/>
                                         </p>
                                         <div class="service-price">
-                                            <t t-esc="service.base_price"/> €
+                                            <t t-esc="service.price_display"/>
                                         </div>
                                         <a t-attf-href="/appointment/book?service_id={{service.id}}" class="btn-book-service mt-3">
                                             <i class="fa fa-calendar-check-o"/> Reservar Ahora

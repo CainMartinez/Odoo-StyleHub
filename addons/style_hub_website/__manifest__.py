@@ -3,20 +3,7 @@
     'name': 'StyleHub Website',
     'version': '1.0',
     'category': 'Website',
-    'summary': 'Website module for StyleHub hair salon',
-    'description': """
-        StyleHub Website Module
-        ========================
-        
-        This module provides the website functionality for StyleHub:
-        - Public home page
-        - Services catalog
-        - Team presentation
-        - Online appointment booking
-        - Customer portal for appointments
-        
-        Depends on style_hub_base for core models and business logic.
-    """,
+    'summary': 'Módulo Web StyleHub para Odoo',
     'author': 'StyleHub',
     'depends': [
         'style_hub_base',

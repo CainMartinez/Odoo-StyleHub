@@ -49,14 +49,9 @@
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <span style="color: #546e7a;">
                                                             <i class="fa fa-clock-o" style="color: #3EBFBD;"/> 
-                                                            <t t-if="service.duration &lt; 1">
-                                                                <t t-esc="int(service.duration * 60)"/> min
-                                                            </t>
-                                                            <t t-else="">
-                                                                <t t-esc="service.duration"/> horas
-                                                            </t>
+                                                            <t t-esc="service.duration_display"/>
                                                         </span>
-                                                        <span class="text-success font-weight-bold"><t t-esc="service.base_price"/> €</span>
+                                                        <span class="text-success font-weight-bold"><t t-esc="service.price_display"/></span>
                                                     </div>
                                                 </div>
                                             </div>
