@@ -41,9 +41,9 @@
                                     <tr>
                                         <td>
                                             <t t-if="apt.start_datetime">
-                                                <span t-esc="apt.start_datetime.strftime('%H:%M')"/>
+                                                <span t-esc="apt.start_datetime" t-options="{'widget': 'datetime', 'format': 'HH:mm'}"/>
                                                 -
-                                                <span t-esc="apt.end_datetime.strftime('%H:%M') if apt.end_datetime else ''"/>
+                                                <span t-if="apt.end_datetime" t-esc="apt.end_datetime" t-options="{'widget': 'datetime', 'format': 'HH:mm'}"/>
                                             </t>
                                             <t t-else="">SIN HORA</t>
                                         </td>
@@ -68,10 +68,10 @@
                                             </t>
                                         </td>
                                         <td class="text-center">
-                                            <span t-if="apt.state == 'draft'" class="badge bg-secondary">Borrador</span>
-                                            <span t-if="apt.state == 'confirmed'" class="badge bg-warning">Confirmada</span>
-                                            <span t-if="apt.state == 'done'" class="badge bg-success">Completada</span>
-                                            <span t-if="apt.state == 'cancelled'" class="badge bg-danger">Cancelada</span>
+                                            <span t-if="apt.state == 'draft'" >Borrador</span>
+                                            <span t-if="apt.state == 'confirmed'" >Confirmada</span>
+                                            <span t-if="apt.state == 'done'" >Completada</span>
+                                            <span t-if="apt.state == 'cancelled'" >Cancelada</span>
                                         </td>
                                     </tr>
                                 </t>

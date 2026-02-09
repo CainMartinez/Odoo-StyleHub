@@ -4,6 +4,7 @@ from odoo import http
 from odoo.http import request
 from datetime import datetime, timedelta
 import json
+import pytz
 
 
 class StyleHubWebsite(http.Controller):
@@ -49,7 +50,13 @@ class StyleHubWebsite(http.Controller):
     def get_available_slots(self, date, service_ids):
         """Get available time slots for a specific date and services"""
         try:
+            # Obtener timezone del usuario o usar Europe/Madrid por defecto
+            tz_name = request.env.context.get('tz') or request.env.user.tz or 'Europe/Madrid'
+            user_tz = pytz.timezone(tz_name)
+            
             appointment_date = datetime.strptime(date, '%Y-%m-%d').date()
+            now = datetime.now(user_tz)
+            is_today = appointment_date == now.date()
             
             # Calculate total duration
             services = request.env['stylehub.service'].sudo().browse(service_ids)
@@ -64,13 +71,23 @@ class StyleHubWebsite(http.Controller):
             current_time = start_hour
             
             while current_time + total_duration <= end_hour:
-                slot_datetime = datetime.combine(appointment_date, datetime.min.time())
-                slot_datetime = slot_datetime.replace(hour=int(current_time), 
-                                                     minute=int((current_time % 1) * 60))
+                # Crear datetime en timezone local
+                slot_datetime_naive = datetime.combine(appointment_date, datetime.min.time())
+                slot_datetime_naive = slot_datetime_naive.replace(hour=int(current_time), 
+                                                                  minute=int((current_time % 1) * 60))
+                slot_datetime_local = user_tz.localize(slot_datetime_naive)
+                
+                # Si es hoy, solo mostrar horarios futuros (al menos 30 min de adelanto)
+                if is_today and slot_datetime_local <= now + timedelta(minutes=30):
+                    current_time += slot_interval
+                    continue
+                
+                # Convertir a UTC para verificar disponibilidad
+                slot_datetime_utc = slot_datetime_local.astimezone(pytz.UTC).replace(tzinfo=None)
                 
                 # Check if any stylist is available
                 stylist = request.env['stylehub.appointment'].sudo()._find_available_stylist(
-                    slot_datetime, total_duration
+                    slot_datetime_utc, total_duration
                 )
                 
                 if stylist:
@@ -78,7 +95,7 @@ class StyleHubWebsite(http.Controller):
                     minutes = int((current_time % 1) * 60)
                     available_slots.append({
                         'time': f"{hours:02d}:{minutes:02d}",
-                        'datetime': slot_datetime.strftime('%Y-%m-%d %H:%M:%S')
+                        'datetime': slot_datetime_utc.strftime('%Y-%m-%d %H:%M:%S')  # Enviar en UTC
                     })
                 
                 current_time += slot_interval
@@ -91,6 +108,7 @@ class StyleHubWebsite(http.Controller):
     def create_appointment(self, **kwargs):
         """Create appointment from website"""
         try:
+            # La fecha viene en UTC desde el frontend, ya está correcta
             start_datetime = datetime.strptime(kwargs.get('start_datetime'), '%Y-%m-%d %H:%M:%S')
             service_ids = kwargs.get('service_ids', [])
             notes = kwargs.get('notes', '')

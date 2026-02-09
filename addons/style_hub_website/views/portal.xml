@@ -47,7 +47,7 @@
                                         <t t-foreach="appointments" t-as="appointment">
                                             <tr>
                                                 <td>
-                                                    <t t-esc="appointment.start_datetime.strftime('%d/%m/%Y %H:%M')"/>
+                                                    <span t-field="appointment.start_datetime" t-options="{'widget': 'datetime', 'format': 'dd/MM/yyyy HH:mm'}"/>
                                                 </td>
                                                 <td>
                                                     <t t-esc="appointment.stylist_id.name"/>
@@ -98,7 +98,7 @@
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <strong>Fecha y Hora:</strong><br/>
-                                        <t t-esc="appointment.start_datetime.strftime('%d/%m/%Y a las %H:%M')"/>
+                                        <span t-field="appointment.start_datetime" t-options="{'widget': 'datetime', 'format': 'dd/MM/yyyy'}"/> a las <span t-field="appointment.start_datetime" t-options="{'widget': 'datetime', 'format': 'HH:mm'}"/>
                                     </div>
                                     <div class="col-md-6">
                                         <strong>Duración Total:</strong><br/>
